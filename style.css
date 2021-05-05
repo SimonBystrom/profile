@@ -1,0 +1,269 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #61C9A8;
+
+
+}
+
+h1, h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bolder;
+  color: #E6AF2E;
+  margin-bottom: 10px;
+}
+
+
+p {
+    font-weight: bolder;
+    font-size: 18px;
+    color: #FBFEFB;
+    padding: 0px 0.6em;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+ul li {
+   display: inline;
+   margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #FBFEFB;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #61C9A8;
+  width: 100vw;
+  margin: 50px 80px;
+}
+
+
+
+.img-container {
+  position: relative;
+  width: 500px;
+  border-radius:5px;
+
+}
+
+.img-container img {
+  width: 100%;
+  filter: grayscale(100%);
+  object-fit: cover;
+  border-radius: 5px;
+
+  transition: opacity .6s, visibility .6s;
+  transition-timing-function: ease-in-out;
+}
+.main-title {
+  margin: 0 0;
+  position: absolute;
+  top: 0.8em;
+  left: 0.8em;
+  color: #E6AF2E;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity .2s, visibility .2s;
+}
+
+.main-description {
+  font-size: 16px;
+  margin: 0 0;
+  position: absolute;
+  top: 4.2em;
+  left: 2em;
+  color: #E6AF2E;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity .3s, visibility .3s;
+}
+
+.img-container:hover {
+  cursor: pointer;
+}
+
+.img-container:hover .main-title, .img-container:hover .main-description{
+  visibility: visible;
+  opacity: 1;
+}
+
+.img-container:hover img{ filter: grayscale(20%); }
+
+.info-box {
+  width: 260px;
+  border-radius: 7px;
+}
+
+.info-box h2 { font-size: 42px; }
+
+.left {
+  position: absolute;
+  left: 700px;
+  top: 60px;
+}
+
+.right {
+  position: absolute;
+  left: 1050px;
+  top: 60px;
+}
+
+.down-left {
+  position: absolute;
+  left: 700px;
+  top: 260px;
+}
+
+.span-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 200px;
+  margin: 25px 10px;
+
+}
+
+.span-container span {
+  padding: 3px 5px;
+  border: 1px solid #FBFEFB;
+  width: 70px;
+  border-radius: 10px;
+  text-align: center;
+  color: #FBFEFB;
+  font-weight: bolder;
+}
+
+.down-right{
+  position: absolute;
+  left: 1100px;
+  top: 370px;
+  width: 160px;
+}
+
+.contact {
+    position: absolute;
+    left: 1100px;
+    top: 460px;
+    background-color: #B6465F;
+    width: 160px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.contact:hover {
+  box-shadow: 1px 1px 1px 1px #fff;
+}
+
+
+
+.social-container a {
+  font-size: 32px;
+  color: #3D348B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 50px; height: 50px;
+  border: 3px solid #3D348B;
+  border-radius: 50%;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.social-container a::before{
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  background-color: #3D348B;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  transform: scale(0);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.social-container a:hover{ color: #E6AF2E; }
+.social-container a:hover::before{ transform: scale(1.1); }
+
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+    background-color: #61C9A8;
+    margin-bottom: 80px;
+
+  }
+  .info-box {
+    position: static;
+  }
+
+  .right{
+    position: absolute;
+    top: 545px;
+    left: 400px;
+  }
+
+  .contact {
+    position: absolute;
+    top: 920px;
+    left: 430px;
+  }
+  .down-right{
+    position: absolute;
+    top: 840px;
+    left: 430px;
+  }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 380px;
+    margin: 30px 55px;
+  }
+
+  .img-container {
+    width: 380px;
+  }
+
+  .info-box {
+    position: static;
+  }
+
+  .down-left {
+    height: 260px;
+  }
+
+  .contact {
+    margin: 0px 0px 0px 50px;
+  }
+
+  .contact a{
+    display: inline-block;
+  }
+
+  .down-right {
+    margin: 0px 0px 0px 50px;
+  }
+
+}
